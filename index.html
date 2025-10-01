@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Fragancias Jhon Dainer Arias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>/* Variables CSS: Define colores y sombras para fácil modificación */
+:root {
+    --primary-color: #0a0a0a;
+    --secondary-color: #D4AF37;
+    --text-color: #333;
+    --light-bg: #f4f4f4;
+    --white: #FDFDFD;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos Generales del Cuerpo de la Página */
+body {
+    margin: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    min-height: 150vh;
+    padding-top:0%;
+}
+
+/* Contenedor general: Para centrar el contenido y limitar su ancho */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos generales para los Botones */
+.btn {
+    background-color: #0568fd;
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+
+
+        /* --- ESTILOS DEL MENÚ FLOTANTE (COPIADOS DE TU CÓDIGO) --- */
+        .menu-flotante {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            left: auto;
+            transform: none;
+            z-index: 1000;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 15px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu-flotante:hover {
+            transform: none;
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .menu-flotante ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        .menu-flotante ul li {
+            list-style: none;
+        }
+
+        .menu-flotante ul li a {
+            background: rgba(255, 255, 255, 0.1);
+            color: #00000c;
+            text-decoration: none;
+            padding: 6px 8px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+                        -5px -5px 10px rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .menu-flotante ul li a:hover {
+            background: rgba(21, 135, 241, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.3),
+                        -7px -7px 14px rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-flotante ul li a:active {
+            transform: translateY(0);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+                        inset -2px -2px 5px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+
+ /* --- Adaptabilidad (Responsive Design) del Menú --- */
+        @media (max-width: 768px) {
+            .menu-flotante {
+                top: 15px;
+                right: 15px;
+                padding: 10px 15px;
+                border-radius: 10px;
+            }
+            .menu-flotante ul {
+                gap: 10px;
+            }
+            .menu-flotante ul li a {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+            h1 {
+                font-size: 2.8em;
+                padding-top: 60px;
+            }
+            h2 {
+                font-size: 2em;
+            }
+        }
+
+
+
+
+/* --- SECCIÓN HERO (Banner Principal) --- */
+.hero {
+    height: 500px;
+    background-image:url('imagen/ref/a.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: var(--white);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(92, 67, 231, 0.4), rgba(211, 80, 80, 0.6));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--white);
+}
+
+/* --- SECCIÓN QUE LLAMA LA ATENCIÓN (ATTENTION GRABBER) --- */
+.attention-grabber {
+    background: linear-gradient(45deg, #0a0a0a, #02bbffd8, #ddab06, #5c1a5c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(228, 16, 16, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.attention-grabber .container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.attention-icon {
+    font-size: 3.5em;
+    color: var(--white);
+    margin-bottom: 20px;
+    opacity: 0.9;
+    animation: bounceIcon 2s infinite ease-in-out;
+}
+
+@keyframes bounceIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.attention-grabber h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.attention-grabber p {
+    font-size: 1.3em;
+    margin-bottom: 35px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.btn-attention {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 18px 40px;
+    font-size: 1.4em;
+    border-radius: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-attention:hover {
+    background-color: #fcc101;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* --- SECCIÓN CARRUSEL (Nuestras Referencias) --- */
+.carousel-section {
+    padding: 60px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.carousel-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    animation: carouselScroll 0s infinite linear;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item:hover .carousel-caption {
+    opacity: 1;
+}
+
+@keyframes carouselScroll {
+    0% { transform: translateX(0%); }
+    16.66% { transform: translateX(0%); }
+    20% { transform: translateX(-100%); }
+    36.66% { transform: translateX(-100%); }
+    40% { transform: translateX(-200%); }
+    56.66% { transform: translateX(-200%); }
+    60% { transform: translateX(-300%); }
+    76.66% { transform: translateX(-300%); }
+    80% { transform: translateX(-400%); }
+    96.66% { transform: translateX(-400%); }
+    100% { transform: translateX(-500%); }
+}
+
+/* --- SECCIÓN DE PRODUCTOS DESTACADOS (Tamaños Disponibles) --- */
+.featured-products {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--light-bg);
+}
+
+.featured-products h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+}
+
+.product-info p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.product-card .btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+/* --- SECCIÓN MARQUEE (Marcas) --- */
+.marquee-section {
+    padding: 40px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.marquee-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.marquee-text {
+    display: inline-flex;
+    animation: marquee 70s linear infinite;
+    will-change: transform;
+}/* Estilo para las imágenes de las marcas */
+.marquee-text img {
+    height: 220px !important; /* Aumenta este valor para hacer los logos más grandes */
+    width: auto !important; /* Mantiene la proporción de la imagen */
+    object-fit: contain;
+    margin: 0 40px;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- SECCIÓN CONTACTO --- */
+#contacto {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--white);
+    border-top: 1px solid #eee;
+}
+
+#contacto h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+#contacto p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+#contacto a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#contacto a:hover {
+    color: var(--primary-color);
+}
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer .social-links {
+    margin-top: 15px;
+}
+
+footer .social-links a {
+    color: var(--white);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- BOTÓN FLOTANTE DE COMPRA --- */
+.buy-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.buy-float:hover {
+    transform: scale(1.1);
+    background-color: #e6c247;
+}
+
+/* Se ha eliminado el texto flotante para simplificar, ya que causaba problemas de responsividad */
+
+/* --- DISEÑO RESPONSIVO: Adaptaciones para diferentes tamaños de pantalla --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 5px 15px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .carousel-item img {
+        height: 300px;
+    }
+    .marquee-text img {
+        height: 60px;
+        margin: 0 20px;
+    }
+    .attention-grabber {
+        padding: 60px 15px;
+    }
+    .attention-grabber h2 {
+        font-size: 2.5em;
+    }
+    .attention-grabber p {
+        font-size: 1.1em;
+    }
+    .attention-icon {
+        font-size: 2.8em;
+    }
+    .btn-attention {
+        padding: 15px 30px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .carousel-item img {
+        height: 250px;
+    }
+    .buy-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+    .marquee-text img {
+        height: 50px;
+        margin: 0 15px;
+    }
+    .attention-grabber {
+        padding: 40px 10px;
+    }
+    .attention-grabber h2 {
+        font-size: 2em;
+    }
+    .attention-grabber p {
+        font-size: 1em;
+    }
+    .attention-icon {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+    .btn-attention {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+ /* --- Adaptabilidad (Responsive Design) del Menú --- */
+        @media (max-width: 768px) {
+            .menu-flotante {
+                top: 15px;
+                right: 15px;
+                padding: 10px 15px;
+                border-radius: 10px;
+            }
+            .menu-flotante ul {
+                gap: 10px;
+            }
+            .menu-flotante ul li a {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+            h1 {
+                font-size: 2.8em;
+                padding-top: 60px;
+            }
+            h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-flotante {
+                top: 10px;
+                right: 10px;
+                padding: 8px 10px;
+                border-radius: 8px;
+                width: auto;
+                left: auto;
+                transform: none;
+            }
+            .menu-flotante ul {
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                gap: 8px;
+            }
+            .menu-flotante ul li a {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+</style>
+</head>
+<body>
+
+    <nav class="menu-flotante">
+        <ul>
+           <li><a href="compras.html">pagina de compras </a></li>
+            <li><a href="catalogo.html">catalogo </a></li>
+            </ul>
+    </nav>
+
+
+    <main>
+<section class="attention-grabber">
+    <div class="container"><br>
+    
+        <h2>mis fragancias  jhon dainer arias </h3>
+      <h3>preparamos fragancias, en singles genericos, de bajo costo para mayor economia, la fragancia, el envase, y el tamaño que elijas  </h2>
+        <p>No dejes pasar la oportunidad de adquirir tus fragancias favoritas con un descuento increíble. ¡Stock limitado!</p>
+        <a href="compras.html" class="btn btn-attention">Desde $20.000 </a>
+    </div>
+</section>
+      <section class="marquee-section" id="marcas">
+        <div class="container">
+            <h1>Marcas Destacadas <i class="fas fa-star"></i></h1>
+            <div class="marquee-container">
+                <div class="marquee-text">
+                    <img src="img\9pm.webp " alt="Logo">
+                    <img src="img\ahli.jpg " alt="Logo">
+                     <img src="img\alhara.jpg " alt="Logo">
+                    <img src="img\anilame.jpg " alt="Logo">
+                    <img src="img\antonio.jpg " alt="Logo">
+                   <img src=" img\ariana.webp" alt="Logo">
+                   <img src="img\armaf.avif " alt="Logo">
+                   <img src="img\bahara.jpg " alt="Logo">
+                   <img src=" img\bath.jpg" alt="Logo">
+                   <img src="img\benet.webp " alt="Logo">                       
+                   <img src=" img\bur.jpg" alt="Logo">
+                   <img src=" img\calvin.jpg" alt="Logo">
+                   <img src="img\carolina.jpg " alt="Logo">
+                   <img src=" img\chanel.jpg" alt="Logo">
+                   <img src="img\diesel.jpg " alt="Logo">
+                   <img src=" img\dior.jpg" alt="Logo">
+                   <img src=" img\dolce.jpg" alt="Logo">
+                   <img src=" img\dorsay.jpg" alt="Logo">
+                   <img src=" img\giardini.jpg" alt="Logo">
+                   <img src="img\giorgio.jpg " alt="Logo">
+                   <img src="img\gotas.jpg " alt="Logo">
+                   <img src="img\hugo.jpg " alt="Logo">
+                   <img src=" img\ilil.jpg" alt="Logo">
+                   <img src=" img\jean.jpg" alt="Logo">
+                   <img src="img\lacos.jpg " alt="Logo">
+                   <img src=" img\latafa.jpg" alt="Logo">
+                   <img src="img\louis.jpg " alt="Logo">
+                   <img src=" img\moshino.jpg" alt="Logo">
+                   <img src=" img\paco.svg" alt="Logo">
+                   <img src=" img\paris.jpg" alt="Logo">
+                   <img src="img\sofia.jpg " alt="Logo">
+                   <img src="img\temp.jpg " alt="Logo">
+                   <img src="img\thom.jpg " alt="Logo">
+                   <img src=" img\versace.jpg" alt="Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="featured-products" id="tamaños">
+            <div class="container">
+                <h2>Tamaños Disponibles</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="img/fr6.png" alt="">
+                        <div class="product-info">
+                            <h3>30 ml</h3>
+                            <p>El tamaño perfecto para llevar a todos lados, ideal para el bolso o cartera
+                            </p>
+        <span class="price">$20.000 </span>
+                            <a href="compras.html" class="btn">Comprar</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/60ml.jpg" alt="">
+                        <div class="product-info">
+                            <h3>50 ml</h3>
+                            <p>Un tamaño intermedio para uso diario, con la cantidad justa para durar un buen tiempo.</p>
+                            <span class="price">$40.000 </span>
+                            <a href="compras.html" class="btn">Comprar</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/100ml.jpg" alt="">
+                        <div class="product-info">
+                            <h3>100 ml</h3>
+                            <p>Nuestro tamaño más grande y económico, perfecto para tu tocador y para los amantes de las fragancias.</p>
+                            <span class="price">$70.000 </span>
+                            <a href="compras.html" class="btn">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+               
+        </section>
+
+        <section class="marquee-section" id="marcas">
+            <div class="container">
+                <h1> embases disponibles  <h3> en diferentes colores </h3>
+                <div class="marquee-container">
+                    <div class="marquee-text">
+                        <img src="img/fr2.jpg " alt="Logo">
+<img src="img/fr3.png " alt="Logo">
+<img src="img/fr4.png " alt="Logo">
+<img src="img/fr5.png " alt="Logo">
+<img src="img/fr6.png " alt="Logo">
+<img src="img/fr7.png " alt="Logo">
+<img src="img/fr8.png " alt="Logo">
+<img src="img/fr9.png " alt="Logo">
+<img src="img/fr9a.png " alt="Logo">
+<img src="img/fr9b.png " alt="Logo">
+<img src="img/fr9c.png " alt="Logo">
+<img src="img/fr9d.png " alt="Logo">
+<img src="img/fr9e.png " alt="Logo">
+<img src="img/fr9f.png " alt="Logo">
+<img src="img/fr9g.png " alt="Logo">
+<img src="img/fr9h.png " alt="Logo">
+<img src="img/fr9i.png " alt="Logo">
+<img src="img/fr9j.png " alt="Logo">
+<img src="img/fr9k.png " alt="Logo">
+<img src="img/fr9l.png " alt="Logo">
+<img src="img/fr9m.png " alt="Logo">
+<img src="img/fr9n.png " alt="Logo">
+<img src="img/fr9o.png " alt="Logo">
+                        </div>
+                </div>
+            </div> 
+        </section>
+
+        <section id="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <p>¿Tienes alguna pregunta o necesitas ayuda? No dudes en contactarnos.</p>
+    <p> llámanos a: <a href="tel:+3138094678">+57 313 809 4678</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mis Fragancias Jhon Dainer Arias. <br> ibague tolima </p>
+            <div class="social-links">
+              
+                <a href="https://www.facebook.com//jhondainer.ariasparra" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="compras.html" class="buy-float" title="Comprar">
+        <i class="fas fa-shopping-cart"></i>
+    </a>
+
+</body>
+</html>

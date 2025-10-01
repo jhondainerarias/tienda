@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Perfumes | jhon dainer arias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+   
+    <style>  body {
+    font-family: 'Roboto', sans-serif;
+    /* Añade el linear-gradient antes de la URL de la imagen */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/001.jpg');
+    background-size: cover; /* Para que la imagen cubra toda la pantalla */
+    background-position: center; /* Para centrar la imagen */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 🟢 Estilos ELEGANTES para el LOGO CUADRADO 🟢 */
+
+
+/* IMPORTANTE: ESTO SOLO AFECTA A LA IMAGEN DENTRO DE .header-logo */
+.header-left .header-logo img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.header-logo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    border-color: #5b9edc; 
+    cursor: pointer;
+}
+/*
+ * 1. Estilos generales de la barra contenedora (Asume que están dentro de un <div> o <nav>)
+ */
+.nav-bar-integrada {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-around; /* Distribuye el espacio entre los botones */
+    align-items: center;
+    
+    /* Para que la barra se quede fija en la parte inferior (común en apps) */
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    
+    background-color: #333; /* Fondo oscuro para la barra */
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Sombra superior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/*
+ * 2. Estilos comunes para ambos botones (<a>)
+ */
+.btn-inicio-integrado,
+.btn-catalogo-integrado {
+    /* Reseteo de estilos de enlace */
+    text-decoration: none; 
+    color: #ffffff; /* Texto blanco */
+    font-size: 14px;
+    font-weight: 600;
+    
+    /* Dimensiones y apariencia */
+    flex: 1; /* Permite que ambos ocupen el mismo espacio */
+    text-align: center; /* Centra el texto dentro del botón */
+    padding: 10px 5px;
+    margin: 0 5px; /* Espacio entre los botones */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Animación suave */
+}
+
+/*
+ * 3. Estilos específicos para el botón "Inicio"
+ */
+.btn-inicio-integrado {
+    background-color: #4CAF50; /* Un verde vibrante (puedes cambiarlo) */
+    border: 2px solid #4CAF50;
+}
+
+/* * 4. Estilos específicos para el botón "Catálogo" 
+ */
+.btn-catalogo-integrado {
+    background-color: #008CBA; /* Un azul moderno (puedes cambiarlo) */
+    border: 2px solid #008CBA;
+    line-height: 1.2; /* Ajusta la altura de la línea para mejor centrado si no tiene <br> */
+}
+
+
+/* * 5. Efectos de Hover y Click para ambos
+ */
+.btn-inicio-integrado:hover {
+    background-color: rgb(55, 198, 241);
+}
+
+.btn-catalogo-integrado:hover {
+    background-color: #007bb5;
+}
+
+.btn-inicio-integrado:active,
+.btn-catalogo-integrado:active {
+    transform: scale(0.98); /* Pequeño efecto de hundimiento al hacer click */
+}
+
+/* Estilo para el <br> dentro del botón Inicio para un salto de línea limpio */
+.btn-inicio-integrado br {
+    display: block;
+    content: "";
+    margin-top: -3px; /* Ajusta el espacio vertical del salto de línea */
+}
+.menu-flotante-transparente {
+    /* Posicionamiento y visibilidad */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    
+    /* Apariencia y transparencia */
+    background-color: transparent;
+    color: rgb(200, 240, 250); /* Color del texto para que sea visible */
+    border: 2px solid rgb(247, 242, 201); /* Borde para definir la forma del botón */
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Efecto de transición suave */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.menu-flotante-transparente:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Color semi-transparente blanco */
+    color: white;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.purchase-panel {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0d2;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.panel-title {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.step {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.label-input, .label-select {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], input[type="tel"], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.next-btn, .back-btn, #send-order-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn, #send-order-btn {
+    background-color: #25d366;
+    color: white;
+}
+
+.next-btn:hover, #send-order-btn:hover {
+    background-color: #128c7e;
+}
+
+.back-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.back-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.brand-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.brand-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.brand-item.selected {
+    border-color: #25d366;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.step-subtitle {
+    font-size: 1.5em;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.dynamic-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.dynamic-list li {
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.dynamic-list li:hover {
+    background-color: #f9f9f9;
+}
+
+.dynamic-list li.selected {
+    background-color: #e0f2f1;
+    border-color: #25d366;
+    font-weight: bold;
+}
+
+.order-summary {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+    border: 1px solid #eee;
+}
+
+.order-summary p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.order-summary span {
+    font-weight: bold;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+</head>
+ <main class="main-container">
+        <div class="purchase-panel"> 
+<body class="attention-grabber">
+
+    <header class="page-header">
+        <div class="header-left">
+            <div class="header-logo">
+                <img src="img\aa2.jpg" alt="Logo de la Tienda" title="Perfume Shop">
+            </div>
+            <div class="header-title">
+                <h1>Perfumería Exclusiva | Mis Fragancias Jhon Arias</h1>
+            </div>
+        </div>
+
+    <a href="index.html" class="btn-inicio-integrado">
+        Inicio
+    </a>
+    <a href="catalogo.html" class="btn-catalogo-integrado">
+        Catalogo
+    </a>
+</nav>
+    </header>
+    </div>
+      
+        
+    <main class="main-container">
+        <div class="purchase-panel"> 
+          
+            <h2 class="panel-title">Pagina de compras </h2>
+            <div class="search-container">
+                <input type="text" id="perfume-search" placeholder="escribe el nombre de tu perfume te ayudo a buscar   ...">
+                <div id="search-results" class="hidden"></div>
+            </div>
+            
+            <div id="step-1" class="step">
+                <h3 class="step-subtitle"> Selecciona una Marca</h3>
+                <div class="brand-grid">
+                    <div class="brand-item" data-brand="Carolina Herrera">
+                        <img src="img/carolina.jpg" alt="Carolina Herrera" class="brand-icon">
+                        <span>Carolina Herrera</span>
+                    </div>
+                    <div class="brand-item" data-brand="Paco Rabanne">
+                        <img src="img/paco.jpg" alt="Paco Rabanne" class="brand-icon">
+                        <span>Paco Rabanne</span>
+                    </div>
+                    <div class="brand-item" data-brand="Lataffa">
+                        <img src="img/latafa.jpg" alt="Lataffa" class="brand-icon">
+                        <span>Lataffa</span>
+                    </div>
+                    <div class="brand-item" data-brand="Hugo Boss">
+                        <img src="img/hugo.jpg" alt="Hugo Boss" class="brand-icon">
+                        <span>Hugo Boss</span>
+                    </div>
+                    <div class="brand-item" data-brand="Lacoste">
+                        <img src="img/lacoste.jpg" alt="Lacoste" class="brand-icon">
+                        <span>Lacoste</span>
+                    </div>
+                    <div class="brand-item" data-brand="Yambal">
+                        <img src="img/temp.jpg" alt="Yambal" class="brand-icon">
+                        <span>Yambal</span>
+                    </div>
+                    <div class="brand-item" data-brand="Victoria Secret">
+                        <img src="img/victoria.jpg" alt="Victoria Secret" class="brand-icon">
+                        <span>Victoria Secret</span>
+                    </div>
+                    <div class="brand-item" data-brand="Jean Paul Gaultier">
+                        <img src="img/jean.jpg" alt="Jean Paul Gaultier" class="brand-icon">
+                        <span>Jean Paul Gaultier</span>
+                    </div>
+                    <div class="brand-item" data-brand="Montale">
+                        <img src="img/montale.jpg" alt="Montale" class="brand-icon">
+                        <span>Montale</span>
+                    </div>
+                    <div class="brand-item" data-brand="Ariana Grande">
+                        <img src="img/ariana.jpg" alt="Ariana Grande" class="brand-icon">
+                        <span>Ariana Grande</span>
+                    </div>
+                    <div class="brand-item" data-brand="Versace">
+                        <img src="img/versace.jpg" alt="Versace" class="brand-icon">
+                        <span>Versace</span>
+                    </div>
+                    <div class="brand-item" data-brand="Calvin Klein">
+                        <img src="img/calvin.jpg" alt="Calvin Klein" class="brand-icon">
+                        <span>Calvin Klein</span>
+                    </div>
+                    <div class="brand-item" data-brand="Ilmin">
+                        <img src="img/ilmin.jpg" alt="Ilmin" class="brand-icon">
+                        <span>Ilmin</span>
+                    </div>
+                    <div class="brand-item" data-brand="Moshino">
+                        <img src="img/moshino.jpg" alt="Moshino" class="brand-icon">
+                        <span>Moshino</span>
+                    </div>
+                    <div class="brand-item" data-brand="Armaf">
+                        <img src="img/armaf.jpg" alt="Armaf" class="brand-icon">
+                        <span>Armaf</span>
+                    </div>
+                    <div class="brand-item" data-brand="Giorgio Armani">
+                        <img src="img/giorgio.jpg" alt="Giorgio Armani" class="brand-icon">
+                        <span>Giorgio Armani</span>
+                    </div>
+                    <div class="brand-item" data-brand="Chanel">
+                        <img src="img/chanel.jpg" alt="Chanel" class="brand-icon">
+                        <span>Chanel</span>
+                    </div>
+                    <div class="brand-item" data-brand="Escada">
+                        <img src="img/escada.jpg" alt="Escada" class="brand-icon">
+                        <span>Escada</span>
+                    </div>
+                    <div class="brand-item" data-brand="Afnan">
+                        <img src="img/9pm.jpg" alt="Afnan" class="brand-icon">
+                        <span>Afnan</span>
+                    </div>
+                    <div class="brand-item" data-brand="Antonio Banderas">
+                        <img src="img/antonio.jpg" alt="Antonio Banderas" class="brand-icon">
+                        <span>Antonio Banderas</span>
+                    </div>
+                    <div class="brand-item" data-brand="Dolce & Gabbana">
+                        <img src="img/dolce.jpg" alt="Dolce & Gabbana" class="brand-icon">
+                        <span>Dolce & Gabbana</span>
+                    </div>
+                    <div class="brand-item" data-brand="Christian Dior">
+                        <img src="img/dior.jpg" alt="Christian Dior" class="brand-icon">
+                        <span>Christian Dior</span>
+                    </div>
+                    <div class="brand-item" data-brand="Diesel">
+                        <img src="img/diesel.jpg" alt="Diesel" class="brand-icon">
+                        <span>Diesel</span>
+                    </div>
+                    <div class="brand-item" data-brand="Orientica">
+                        <img src="img/orientica.jpg" alt="Orientica" class="brand-icon">
+                        <span>Orientica</span>
+                    </div>
+                    <div class="brand-item" data-brand="Ralph Lauren">
+                        <img src="img/ralp.jpg" alt="Ralph Lauren" class="brand-icon">
+                        <span>Ralph Lauren</span>
+                    </div>
+                    <div class="brand-item" data-brand="Al Haramain">
+                        <img src="img/alhara.jpg" alt="Al Haramain" class="brand-icon">
+                        <span>Al Haramain</span>
+                    </div>
+                    <div class="brand-item" data-brand="Bahara">
+                        <img src="img/bahara.jpg" alt="Bahara" class="brand-icon">
+                        <span>Bahara</span>
+                    </div>
+                    <div class="brand-item" data-brand="Ahli Fragrances">
+                        <img src="img/ahli.jpg" alt="Ahli Fragrances" class="brand-icon">
+                        <span>Ahli Fragrances</span>
+                    </div>
+                    <div class="brand-item" data-brand="Bath & Bois">
+                        <img src="img/bath.jpg" alt="Bath & Bois" class="brand-icon">
+                        <span>Bath & Bois</span>
+                    </div>
+                    <div class="brand-item" data-brand="Parfumes de Marly">
+                        <img src="img/mary.jpg" alt="Parfumes de Marly" class="brand-icon">
+                        <span>Parfumes de Marly</span>
+                    </div>
+                    <div class="brand-item" data-brand="Valentino">
+                        <img src="img/valentino.jpg" alt="Valentino" class="brand-icon">
+                        <span>Valentino</span>
+                    </div>
+                    <div class="brand-item" data-brand="Animale">
+                        <img src="img/animale.jpg" alt="Animale" class="brand-icon">
+                        <span>Animale</span>
+                    </div>
+                    <div class="brand-item" data-brand="Esika">
+                        <img src="img/dorsay.jpg" alt="Esika" class="brand-icon">
+                        <span>Esika</span>
+                    </div>
+                    <div class="brand-item" data-brand="Sofia Vergara">
+                        <img src="img/sofia.jpg" alt="Sofia Vergara" class="brand-icon">
+                        <span>Sofia Vergara</span>
+                    </div>
+                    <div class="brand-item" data-brand="Tommy Hilfiger">
+                        <img src="img/thom.jpg" alt="Tommy Hilfiger" class="brand-icon">
+                        <span>Tommy Hilfiger</span>
+                    </div>
+                    <div class="brand-item" data-brand="Benetton">
+                        <img src="img/tribu.jpg" alt="Benetton" class="brand-icon">
+                        <span>Benetton</span>
+                    </div>
+                    <div class="brand-item" data-brand="Burberry">
+                        <img src="img/bur.jpg" alt="Burberry" class="brand-icon">
+                        <span>Burberry</span>
+                    </div>
+                    <div class="brand-item" data-brand="Giardini Di Toscana">
+                        <img src="img/giardini.jpg" alt="Giardini Di Toscana" class="brand-icon">
+                        <span>Giardini Di Toscana</span>
+                    </div>
+                    <div class="brand-item" data-brand="Agatha Ruiz de la Prada">
+                        <img src="img/gotas.jpg" alt="Agatha Ruiz de la Prada" class="brand-icon">
+                        <span>Agatha Ruiz de la Prada</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="step-2" class="step hidden">
+                <h3 class="step-subtitle"> Selecciona un Perfume</h3>
+                <ul id="perfume-list" class="dynamic-list">
+                </ul>
+                <button class="back-btn" data-step="1">Atrás</button>
+            </div>
+            
+            <div id="step-3" class="step hidden">
+                <h3 class="step-subtitle">Detalles y Resumen</h3>
+                <div class="order-summary">
+                    <p>Marca: <span id="summary-brand"></span></p>
+                    <p>Perfume: <span id="summary-perfume"></span></p>
+                </div>
+                <label for="size-select" class="label-select">Tamaño:</label>
+                <select name="perfume-size" id="size-select">
+                    <option value="">-- Selecciona un tamaño --</option>
+                    <option value="30ml">PEQUEÑO $20.000</option>
+                    <option value="50ml">MEDIANO $40.000</option>
+                    <option value="100ml">GRANDE $70.000</option>
+                </select>
+                <label for="payment-method-select" class="label-select">Método de Pago:</label>
+                <select name="payment-method" id="payment-method-select">
+                    <option value="">-- Selecciona una metodo --</option>
+                    <option value="nequi">Nequi</option>
+                    <option value="efectivo">Efectivo contra entrega</option>
+                    <option value="a-plazos">A plazos</option>
+                </select>
+                <p class="delivery">El pago a plazos tiene un costo adicional de $5.000</p>
+                <button class="next-btn" data-step="4">Siguiente</button>
+                <button class="back-btn" data-step="2">Atrás</button>
+            </div>
+            
+            <div id="step-4" class="step hidden">
+                <h3 class="step-subtitle"> Confirma tus Datos</h3>
+                <label for="client-name" class="label-input">Tu Nombre:</label>
+                <input type="text" id="client-name" placeholder="Ej. jhon arias">
+                <label for="client-phone" class="label-input">Tu Teléfono:</label>
+                <input type="tel" id="client-phone" placeholder="Ej. 3138094678">
+                <button id="send-order-btn">Hacer la compra por WhatsApp</button>
+                <button class="back-btn" data-step="3">Atrás</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="tienda.js"></script>
+</body>
+</html>
